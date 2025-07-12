@@ -9,8 +9,7 @@
 
 <body>
     <style>
-
-        *{
+        * {
             padding: 0%;
             margin: 0%;
         }
@@ -86,35 +85,34 @@
         @media screen and (max-width:600px) {
 
             h1 {
-                margin-left: 20%;
+                margin-left: 10%;
             }
 
             .table1 {
-                margin-left: 10%;
-                margin-top:2%;
-                width: 70%;
+                margin-left: 11%;
+                margin-top: 2%;
+                width: 80%;
             }
 
             .table2 {
-               font-size:x-small;
-               color: white;
-               width: 70%;
-                
+                font-size: x-small;
+                color: white;
+                width: 40%;
+                font-size: x-small;
+
             }
-            
+
 
             img {
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            position: absolute;
-            opacity: 1;
+                width: 100%;
+                height: 100%;
+                z-index: -1;
+                position: absolute;
+                opacity: 1;
 
             }
 
         }
-
-
     </style>
 
     <div class="bgimage">
@@ -156,10 +154,11 @@
             <td style="align-items: center; justify-content: center; background-color: transparent;">
                 <select id="scourse"
                     style="border: none; background-color: transparent; width: 100%; border-bottom: solid 1px black;">
-                    <option option value="Java script" style="background-color: transparent;">Java Script</option>
-                    <option option value="Python" style="background-color: transparent;">Python</option>
-                    <option option value="C++" style="background-color: transparent;">C++</option>
-                    <option option value="Java" style="background-color: transparent;">Java</option>
+                    <option value="" style="background-color: transparent;">-Select Course-</option>
+                    <option value="Java script" style="background-color: transparent;">Java Script</option>
+                    <option value="Python" style="background-color: transparent;">Python</option>
+                    <option value="C++" style="background-color: transparent;">C++</option>
+                    <option value="Java" style="background-color: transparent;">Java</option>
                 </select>
             </td>
         </tr>
@@ -236,6 +235,12 @@
             if (semail.value === "") {
                 alert("Please enter your email.")
                 return
+            }
+
+            var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(semail.value)) {
+                alert("Please enter a valid email address.");
+                return;
             }
 
 
